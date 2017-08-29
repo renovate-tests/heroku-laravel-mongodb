@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Moloquent\Eloquent\SoftDeletes;
+use Moloquent\Auth\User as BaseUser;
 
-class User extends Authenticatable
+class User extends BaseUser
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
